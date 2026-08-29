@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: discord-voice-247-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: VOICE_CHANNEL_ID
+        sync: false
+      - key: PING_INTERVAL_MS
+        value: "240000"
+    healthCheckPath: /
